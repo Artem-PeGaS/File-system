@@ -1,0 +1,15 @@
+@import url('./components/*.css');
+
+@custom-media --only-phone (width < 600px);
+
+:root {
+	--red: #f72540;
+}
+
+p {
+	color: color-mod(var(--red) alpha(100%));
+
+	@media (--only-phone) {
+		color: var(--red);
+	}
+}

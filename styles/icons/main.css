@@ -1,0 +1,32 @@
+@import url('./components/*.css');
+
+@define-mixin color $color, $color2 {
+	border-top-color: $color;
+	border-left-color: $color2;
+	border-right-color: $color;
+	border-bottom-color: $color;
+
+	@media (max-width: 400px) {
+		p {
+			font-size: 3vw;
+		}
+	}
+}
+
+a:any-link {
+	color: red;
+}
+
+@custom-media --only-phone (width < 600px);
+
+:root {
+	--red: red;
+}
+
+p {
+	color: color-mod(var(--red) alpha(20%));
+
+	@media (--only-phone) {
+		color: var(--red);
+	}
+}

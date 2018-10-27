@@ -1,0 +1,19 @@
+p {
+    color: blue
+}
+body {
+	color: green;
+}
+:root {
+	--red: #f72540;
+}
+p {
+	color: rgb(247, 37, 64);
+	color: rgb(247, 37, 64);
+}
+@media(max-width: 599px) {
+p {
+		color: #f72540;
+		color: var(--red)
+}
+	}
