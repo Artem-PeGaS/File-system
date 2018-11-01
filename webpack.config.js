@@ -2,8 +2,10 @@ const path = require('path');
 
 module.exports = {
     // mode: 'development',
+    context: path.resolve(__dirname, 'scripts'),
     entry: {
-        main: './scripts/main.js'
+        main: './main.js',
+        script: './script.js',
     },
     module: {
         rules: [
@@ -21,6 +23,19 @@ module.exports = {
         filename: '[name].js'
     },
     optimization: {
+        runtimeChunk: { name: 'common' },
+        splitChunks: {
+            cacheGroups: {
+                default: false,
+                commons: {
+                    test: /\.js$/,
+                    name: 'common',
+                    chunks: 'all',
+                    minChunks: 2, // Выносить модули которые минимум в 2 входных точках.
+                    enforce: true
+                }
+            }
+        },
         minimize: false
     }
 };

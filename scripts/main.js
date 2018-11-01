@@ -1,3 +1,3 @@
-const welcome = require('./welcome');
+const welcome = require('./welcome.js');
 
-alert('main');
+welcome('main');

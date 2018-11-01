@@ -1,1 +1,3 @@
-alert('welcome');
+module.exports = function(message) {
+    alert(message);
+};
