@@ -9,7 +9,8 @@ const gulp = require('gulp'),
 	nunjucks = require('nunjucks'),
 	csso = require('csso'),
 	SVGSpriter = require('svg-sprite'),
-	SVGO = require('svgo');
+	SVGO = require('svgo'),
+	webpack = require('webpack');
 
 gulp.task('eslint', (done) => {
 	const cli = new eslint.CLIEngine({
@@ -185,6 +186,14 @@ gulp.task('nunjucks', (done) => {
 		.pipe(gulp.dest(outputs.dest));
 
 	done();
+});
+
+gulp.task('webpack', (done) => {
+	const compiler = webpack(require('./webpack.config.js'));
+	compiler.run((err, result) => {
+		console.log(result);
+		done();
+	});
 });
 
 // gulp.task('series', gulp.series('eslint', 'prettier', 'csso', 'postcss', 'icons', 'images'));
