@@ -1,0 +1,75 @@
+:root {
+	/* https://material.io/guidelines/style/color.html#color-usability */
+	--black: color(black alpha(87%));
+	--sub-black: color(black alpha(54%));
+	--d-black: color(black alpha(38%));
+	--sub-d-black: color(black alpha(26%));
+	--red: #f72540;
+
+	/* https://material.io/guidelines/style/color.html#color-usability */
+	--white: white;
+	--sub-white: color(white alpha(70%));
+	--d-white: color(white alpha(50%));
+	--sub-d-white: color(white alpha(26%));
+
+	--text-color: var(--black);
+	--text-sub-color: var(--sub-black);
+	--text-d-color: var(--d-black);
+	--text-sub-d-color: var(--sub-d-black);
+
+	--fz-0: 0.8rem;
+	--fz-1: 1.2rem;
+	--fz-2: 1.4rem;
+	--fz-3: 2rem;
+	--fz-4: 2.4rem;
+
+	--max-text-width: 36em;
+
+	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-natural-easing-curves */
+	--animate-easing-linear: cubic-bezier(0, 0, 1, 1);
+	--animate-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+	--animate-easing-deceleration: cubic-bezier(0, 0, 0.2, 1);
+	--animate-easing-acceleration: cubic-bezier(0.4, 0, 1, 1);
+
+	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations */
+	--animate-duration-timeout: 3000ms;
+	--animate-duration-effect: 600ms;
+	--animate-duration-enter: 200ms;
+	--animate-duration-leave: 200ms;
+	--animate-duration-cancel: 300ms;
+}
+
+/* https://medium.com/p/88d6a5ba1862 */
+@custom-media --only-phone (width < 600px);
+@custom-media --only-tablet-portrait (width >= 600px) and (width < 900px);
+@custom-media --only-tablet-landscape (width >= 900px) and (width < 1200px);
+@custom-media --only-desktop (width >= 1200px) and (width < 1600px);
+@custom-media --tablet-portrait-up (width >= 600px);
+@custom-media --tablet-landscape-up (width >= 900px);
+@custom-media --desktop-up (width >= 1200px);
+@custom-media --big-desktop-up (width >= 1600px);
+
+@define-mixin ul-solid $color {
+	background-image: linear-gradient(90deg, $color, $color 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 10px 1px;
+}
+
+@define-mixin ul-dotted $color {
+	background-image: linear-gradient(90deg, $color, $color 50%, transparent 50%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 2px 1px;
+}
+
+@define-mixin button-reset {
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}

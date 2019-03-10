@@ -38,7 +38,7 @@ gulp.task('prettier', (done) => {
 			dest: './scripts'
 		},
 		{
-			src: ['styles/*.css'],
+			src: ['styles/**/*.css'],
 			dest: './styles'
 		}
 	];
@@ -185,7 +185,6 @@ gulp.task('nunjucks', (done) => {
 			})
 		)
 		.pipe(gulp.dest(outputs.dest));
-
 	done();
 });
 

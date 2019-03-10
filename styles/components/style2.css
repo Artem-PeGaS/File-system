@@ -1,3 +1,5 @@
 body {
-	color: green;
+	@media (--only-phone) {
+		background-color: var(--red);
+	}
 }

@@ -1,19 +1,32 @@
-{% block header %}
-Header
-{% endblock %}
+<!DOCTYPE html>
 
-{% block list %}
-{% endblock %}
+<html lang="ru">
 
-{% block function %}
-{% endblock %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
 
-<section class="left">
-  {% block left %}{% endblock %}
-</section>
+<body>
 
-<section class="right">
-  {% block right %}
-  This is more content
-  {% endblock %}
-</section>
+{% include "./includes/header.njk" %}
+
+<div>
+  {% block content %}{% endblock %}
+</div>
+
+{% include "./includes/footer.njk" %}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCWIAZZI690B23sTDummHxJQxxre2_iLMk"></script> -->
+<script src="./scripts/main.js"></script>
+
+</body>
+
+</html>

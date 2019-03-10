@@ -1,15 +1,13 @@
+@import url('./variables.css');
+@import url('./fonts.css');
+@import url('./base.css');
+
+/* @import url('./../node_modules'); */
+
 @import url('./components/*.css');
 
-@custom-media --only-phone (width < 600px);
-
-:root {
-	--red: #f72540;
-}
-
-p {
-	color: color-mod(var(--red) alpha(100%));
-
-	@media (--only-phone) {
-		color: var(--red);
-	}
+body {
+	/* .fout & {
+		font-family: 'Example', sans-serif;
+	} */
 }
