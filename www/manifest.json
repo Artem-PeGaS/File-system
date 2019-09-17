@@ -1,0 +1,17 @@
+{
+	"manifest_version": 2,
+	"name": "Суперсайт",
+	"version": "10.0.0",
+    "icons": [
+        {
+            "src": "/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

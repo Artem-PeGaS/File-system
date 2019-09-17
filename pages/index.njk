@@ -1,9 +1,19 @@
-{% extends "./template.njk" %}
+{% extends "./layout.njk" %}
 
 {% block title %}Суперсайт{% endblock %}
 
 {% block content %}
 <div class="content">
-    Hello, world!
+
+  <div class="question">
+    Hello | Приветв
+  </div>
+
+  <div class="elem">
+    <div class="elem__children">
+    </div>
+  </div>
+
+  <svg><use href="./styles/icons/icons.svg#apple" /></svg>
 </div>
 {% endblock %}

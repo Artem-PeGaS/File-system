@@ -1,5 +1,0 @@
-body {
-	@media (--only-phone) {
-		background-color: var(--red);
-	}
-}

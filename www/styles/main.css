@@ -1,1 +1,183 @@
-:root{--black: color(black alpha(87%));--sub-black: color(black alpha(54%));--d-black: color(black alpha(38%));--sub-d-black: color(black alpha(26%));--red: #f72540;--white: white;--sub-white: color(white alpha(70%));--d-white: color(white alpha(50%));--sub-d-white: color(white alpha(26%));--text-color: color(black alpha(87%));--text-color: var(--black);--text-sub-color: color(black alpha(54%));--text-sub-color: var(--sub-black);--text-d-color: color(black alpha(38%));--text-d-color: var(--d-black);--text-sub-d-color: color(black alpha(26%));--text-sub-d-color: var(--sub-d-black);--fz-0: 0.8rem;--fz-1: 1.2rem;--fz-2: 1.4rem;--fz-3: 2rem;--fz-4: 2.4rem;--max-text-width: 36em;--animate-easing-linear: cubic-bezier(0, 0, 1, 1);--animate-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);--animate-easing-deceleration: cubic-bezier(0, 0, 0.2, 1);--animate-easing-acceleration: cubic-bezier(0.4, 0, 1, 1);--animate-duration-timeout: 3000ms;--animate-duration-effect: 600ms;--animate-duration-enter: 200ms;--animate-duration-leave: 200ms;--animate-duration-cancel: 300ms}*{box-sizing:border-box}@media (min-width:1200px){html{font-size:112.5%}}body{background-color:#fff;color:color(black alpha(87%));color:var(--text-color);font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue;line-height:1}body.disable-hover{pointer-events:none}h1,h2,h3,h4,p{margin-bottom:0;margin-top:0}ul{list-style-type:none}ol,ul{margin-bottom:0;margin-top:0;padding-left:1em}blockquote,body{margin:0}a{text-decoration:none}a:focus,a:hover{text-decoration:none}a,a svg,button,button svg{transition-duration:200ms;transition-duration:var(--animate-duration-leave);transition-timing-function:cubic-bezier(.4,0,.2,1);transition-timing-function:var(--animate-easing-standard)}a:focus,a:focus svg,a:hover,a:hover svg,button:focus,button:focus svg,button:hover,button:hover svg{transition-duration:200ms;transition-duration:var(--animate-duration-enter);transition-property:none}input,textarea{color:color(black alpha(87%));color:var(--text-color);font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue;font-size:1em}input:-ms-input-placeholder,input::-ms-input-placeholder,textarea:-ms-input-placeholder,textarea::-ms-input-placeholder{color:color(black alpha(54%));color:var(--text-sub-color)}input::placeholder,textarea::placeholder{color:color(black alpha(54%));color:var(--text-sub-color)}button,select{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue;font-size:1em}.nobr,.visuallyhidden{white-space:nowrap}.visuallyhidden{border-style:none;clip:rect(0 0 0 0);-webkit-clip-path:inset(100%);clip-path:inset(100%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}p{color:#00f}@media (max-width:599px){body{background-color:#f72540;background-color:var(--red)}}
+/* Импорт переменных и шрифтов */
+:root {
+	--black: black;
+	--red: #f72540;
+
+	--text-color: black;
+
+	--text-color: var(--black);
+	--text-sub-color: var(--sub-black);
+	--text-sub-color: var(--sub-black);
+	--text-d-color: var(--d-black);
+	--text-d-color: var(--d-black);
+	--text-sub-d-color: var(--sub-d-black);
+	--text-sub-d-color: var(--sub-d-black);
+
+	--fz-0: 0.8rem;
+	--fz-1: 1.2rem;
+	--fz-2: 1.4rem;
+	--fz-3: 2rem;
+	--fz-4: 3rem;
+
+	--lh-1: 1.25;
+	--lh-2: 1.5;
+	--lh-3: 1.75;
+
+	--max-text-width: 36em;
+
+	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-natural-easing-curves */
+	--animate-easing-linear: cubic-bezier(0, 0, 1, 1);
+	--animate-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+	--animate-easing-deceleration: cubic-bezier(0, 0, 0.2, 1);
+	--animate-easing-acceleration: cubic-bezier(0.4, 0, 1, 1);
+
+	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations */
+	--animate-duration-timeout: 3000ms;
+	--animate-duration-effect: 600ms;
+	--animate-duration-enter: 200ms;
+	--animate-duration-leave: 200ms;
+	--animate-duration-cancel: 300ms;
+}
+/* https://medium.com/p/88d6a5ba1862 */
+@font-face {
+	font-family: 'Museo Sans';
+	font-style: normal;
+	font-weight: normal;
+	src: url('./fonts/MuseoSansCyrillic-300.woff2') format('woff2'),
+		url('./fonts/MuseoSansCyrillic-300.woff') format('woff');
+}
+@font-face {
+	font-family: 'Museo Sans';
+	font-style: normal;
+	font-weight: bold;
+	src: url('./fonts/MuseoSansCyrillic-700.woff2') format('woff2'),
+		url('./fonts/MuseoSansCyrillic-700.woff') format('woff');
+}
+/* Импорт стилей сторонних модулей */
+/* @import url('./../node_modules/swiper/dist/css/swiper.css');
+@import url('./../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'); */
+/* Импорт стилей собственных компонентов */
+.elem {
+	width: 300px;
+	background-color: black;
+	background-color: var(--black);
+	height: 100px;
+}
+.elem__children {
+		width: 100px;
+		background-color: #f72540;
+		background-color: var(--red);
+		height: 70px;
+	}
+.question {
+	width: 300px;
+	background-color: #f72540;
+	background-color: var(--red);
+	height: 100px;
+
+	font-family: 'Museo Sans';
+}
+/* Базовые стили */
+/* stylelint-disable selector-max-universal */
+* {
+	box-sizing: border-box;
+}
+*:focus {
+		outline: none;
+	}
+*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+/* stylelint-enable */
+/* stylelint-disable declaration-no-important */
+[hidden] {
+	display: none !important;
+}
+/* stylelint-enable */
+@media (min-width: 1200px) {
+html {
+		font-size: 112.5%
+}
+	}
+body {
+	color: black;
+	color: var(--text-color);
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	word-wrap: break-word;
+}
+.fout body {
+		font-family: 'Gotham Pro', sans-serif;
+	}
+body.disable-hover {
+		pointer-events: none;
+	}
+mark {
+	background-color: transparent;
+}
+sup {
+	font-size: 0.5em;
+	vertical-align: top;
+}
+input,
+input[type='date'],
+textarea {
+	color: black;
+	color: var(--text-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 1em;
+}
+input::-ms-input-placeholder, input[type='date']::-ms-input-placeholder, textarea::-ms-input-placeholder {
+		color: var(--d-black);
+		color: var(--text-d-color);
+	}
+input::placeholder, input[type='date']::placeholder, textarea::placeholder {
+		color: var(--d-black);
+		color: var(--text-d-color);
+	}
+textarea {
+	line-height: 1;
+	resize: vertical;
+}
+select {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	background-color: transparent;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	color: black;
+	color: var(--text-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 1em;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
+button {
+	background-color: transparent;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	color: black;
+	color: var(--text-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 1em;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+}
+.fout button {
+		font-family: 'Gotham Pro', sans-serif;
+	}
+#barba-wrapper {
+	position: relative;
+}

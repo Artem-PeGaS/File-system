@@ -1,16 +1,6 @@
 :root {
-	/* https://material.io/guidelines/style/color.html#color-usability */
-	--black: color(black alpha(87%));
-	--sub-black: color(black alpha(54%));
-	--d-black: color(black alpha(38%));
-	--sub-d-black: color(black alpha(26%));
+	--black: black;
 	--red: #f72540;
-
-	/* https://material.io/guidelines/style/color.html#color-usability */
-	--white: white;
-	--sub-white: color(white alpha(70%));
-	--d-white: color(white alpha(50%));
-	--sub-d-white: color(white alpha(26%));
 
 	--text-color: var(--black);
 	--text-sub-color: var(--sub-black);
@@ -21,7 +11,11 @@
 	--fz-1: 1.2rem;
 	--fz-2: 1.4rem;
 	--fz-3: 2rem;
-	--fz-4: 2.4rem;
+	--fz-4: 3rem;
+
+	--lh-1: 1.25;
+	--lh-2: 1.5;
+	--lh-3: 1.75;
 
 	--max-text-width: 36em;
 

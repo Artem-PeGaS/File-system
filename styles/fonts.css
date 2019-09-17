@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'Museo Sans';
+	font-style: normal;
+	font-weight: normal;
+	src: url('./fonts/MuseoSansCyrillic-300.woff2') format('woff2'),
+		url('./fonts/MuseoSansCyrillic-300.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Museo Sans';
+	font-style: normal;
+	font-weight: bold;
+	src: url('./fonts/MuseoSansCyrillic-700.woff2') format('woff2'),
+		url('./fonts/MuseoSansCyrillic-700.woff') format('woff');
+}

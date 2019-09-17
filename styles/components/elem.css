@@ -1,0 +1,11 @@
+.elem {
+	width: 300px;
+	background-color: var(--black);
+	height: 100px;
+
+	&__children {
+		width: 100px;
+		background-color: var(--red);
+		height: 70px;
+	}
+}

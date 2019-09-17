@@ -1,0 +1,7 @@
+.question {
+	width: 300px;
+	background-color: var(--red);
+	height: 100px;
+
+	font-family: 'Museo Sans';
+}

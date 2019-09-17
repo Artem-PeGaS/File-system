@@ -1,13 +1,120 @@
+/* Импорт переменных и шрифтов */
 @import url('./variables.css');
 @import url('./fonts.css');
-@import url('./base.css');
 
-/* @import url('./../node_modules'); */
+/* Импорт стилей сторонних модулей */
+/* @import url('./../node_modules/swiper/dist/css/swiper.css');
+@import url('./../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'); */
 
+/* Импорт стилей собственных компонентов */
 @import url('./components/*.css');
 
+/* Базовые стили */
+/* stylelint-disable selector-max-universal */
+* {
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+/* stylelint-enable */
+
+/* stylelint-disable declaration-no-important */
+[hidden] {
+	display: none !important;
+}
+/* stylelint-enable */
+
+html {
+	@media (--desktop-up) {
+		font-size: 112.5%;
+	}
+}
+
 body {
-	/* .fout & {
-		font-family: 'Example', sans-serif;
-	} */
+	color: var(--text-color);
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+	font-family: system-ui;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-wrap: break-word;
+
+	.fout & {
+		font-family: 'Gotham Pro', sans-serif;
+	}
+
+	&.disable-hover {
+		pointer-events: none;
+	}
+}
+
+mark {
+	background-color: transparent;
+}
+
+sup {
+	font-size: 0.5em;
+	vertical-align: top;
+}
+
+input,
+input[type='date'],
+textarea {
+	color: var(--text-color);
+	font-family: system-ui;
+	font-size: 1em;
+
+	&::placeholder {
+		color: var(--text-d-color);
+	}
+}
+
+textarea {
+	line-height: 1;
+	resize: vertical;
+}
+
+select {
+	appearance: none;
+	background-color: transparent;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	color: var(--text-color);
+	font-family: system-ui;
+	font-size: 1em;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
+
+button {
+	background-color: transparent;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	color: var(--text-color);
+	font-family: system-ui;
+	font-size: 1em;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+
+	.fout & {
+		font-family: 'Gotham Pro', sans-serif;
+	}
+}
+
+#barba-wrapper {
+	position: relative;
 }

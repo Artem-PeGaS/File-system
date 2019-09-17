@@ -1,4 +1,3 @@
-// 2
 const gulp = require('gulp'),
 	through2 = require('through2').obj,
 	request = require('request'),
@@ -17,7 +16,7 @@ gulp.task('eslint', (done) => {
 	const cli = new eslint.CLIEngine({
 		fix: true
 	});
-	const report = cli.executeOnFiles(['scripts/script.js']);
+	const report = cli.executeOnFiles(['scripts/main.js']);
 	eslint.CLIEngine.outputFixes(report);
 	const results = cli.getFormatter()(report.results);
 
@@ -168,7 +167,7 @@ gulp.task('images', (done) => {
 
 gulp.task('nunjucks', (done) => {
 	const outputs = {
-		src: ['./pages/*.njk', '!./pages/template.njk'],
+		src: ['./pages/*.njk', '!./pages/layout.njk'],
 		dest: './www'
 	};
 
@@ -196,14 +195,23 @@ gulp.task('webpack', (done) => {
 	});
 });
 
-// gulp.task('series', gulp.series('eslint', 'prettier', 'csso', 'postcss', 'icons', 'images'));
-// gulp.task('parallel', gulp.parallel('eslint', 'prettier', 'csso', 'postcss', 'icons'));
+gulp.task('fonts', (done) => {
+	const outputs = {
+		src: ['./styles/fonts/*.{woff,woff2}'],
+		dest: './www/styles/fonts'
+	};
 
-gulp.task('build', gulp.series('postcss'));
+	gulp.src(outputs.src).pipe(gulp.dest(outputs.dest));
+	done();
+});
 
 gulp.task('watch', () => {
+	gulp.watch('scripts/*.js', gulp.series('webpack'));
 	gulp.watch('styles/**/*.css', gulp.series('postcss'));
+	gulp.watch('pages/**/*.njk', gulp.series('nunjucks'));
 	gulp.watch('styles/icons/**/*.svg', gulp.series('icons'));
+	gulp.watch('styles/images/**/*', gulp.series('images'));
+	gulp.watch('styles/fonts/*', gulp.series('fonts'));
 });
 
 gulp.task('server', () => {
@@ -214,4 +222,6 @@ gulp.task('server', () => {
 	browserSync.watch('./www/**/*.*').on('change', browserSync.reload);
 });
 
-gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'server')));
+gulp.task('dev', gulp.series(gulp.parallel('watch', 'server')));
+
+gulp.task('build', gulp.parallel('eslint', 'webpack', 'prettier', 'csso', 'postcss', 'icons', 'nunjucks', 'images'));

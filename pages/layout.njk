@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+
+{% include "./includes/header.njk" %}
+
+<div>
+  <!-- Main content -->
+    {% block content %}{% endblock %}
+  <!-- End Main content -->
+</div>
+
+{% include "./includes/footer.njk" %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCWIAZZI690B23sTDummHxJQxxre2_iLMk"></script> -->
+<script src="./scripts/main.js"></script>
+
+</body>
+
+</html>
