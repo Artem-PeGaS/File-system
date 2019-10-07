@@ -9,10 +9,11 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"dev": "NODE_ENV=development gulp dev",
-		"build": "NODE_ENV=production gulp build"
+		"dev": "cross-env NODE_ENV=development gulp dev",
+		"build": "cross-env NODE_ENV=production gulp build"
 	},
 	"devDependencies": {
+		"cross-env": "^5.1.5",
 		"@babel/core": "^7.1.2",
 		"@babel/preset-env": "^7.1.0",
 		"babel-loader": "^8.0.4",
