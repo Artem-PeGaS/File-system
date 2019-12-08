@@ -2,6 +2,7 @@
 	width: 300px;
 	background-color: var(--red);
 	height: 100px;
+	color: green;
 
 	font-family: 'Museo Sans';
 }

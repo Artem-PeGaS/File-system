@@ -74,9 +74,26 @@
 	background-color: #f72540;
 	background-color: var(--red);
 	height: 100px;
+	color: green;
 
 	font-family: 'Museo Sans';
 }
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+
+	padding-left: 1rem;
+	padding-right: 1rem;
+	position: relative;
+}
+@media (min-width: 1600px) {
+.wrapper {
+		width: 1400px;
+		padding-left: 0;
+		padding-right: 0
+}
+	}
 /* Базовые стили */
 /* stylelint-disable selector-max-universal */
 * {
