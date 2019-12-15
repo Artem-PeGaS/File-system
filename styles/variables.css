@@ -1,16 +1,25 @@
 :root {
 	--black: black;
 	--red: #f72540;
+	--purple: #202d33;
+	--purple-light: #566473;
+
+	--green-light: color-mod(red alpha(50%));  /* Осветляет */
+	--link-ul-color: color-mod(red tint(50%)); /* Делает прозрачным */
+	--d-black: color-mod(black alpha(38%));
+	--link-ul-a-color: color-mod(var(--purple) alpha(50%));
 
 	--text-color: var(--black);
 	--text-sub-color: var(--sub-black);
 	--text-d-color: var(--d-black);
 	--text-sub-d-color: var(--sub-d-black);
 
-	--fz-0: 0.8rem;
-	--fz-1: 1.2rem;
-	--fz-2: 1.4rem;
-	--fz-3: 2rem;
+	--fz-0: 0.7rem;
+	--fz-1: 0.9rem;
+	--fz-1-c: 0.85rem;
+	--fz-2: 1.1rem;
+	--fz-2-c: 1.35rem;
+	--fz-3: 2.22rem;
 	--fz-4: 3rem;
 
 	--lh-1: 1.25;
@@ -19,29 +28,26 @@
 
 	--max-text-width: 36em;
 
+	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations */
+	--animate-duration-timeout: 2500ms;
+	--animate-duration-effect: 500ms;
+	--animate-duration-enter: 250ms;
+	--animate-duration-leave: 200ms;
+	--animate-duration-micro: 100ms;
+
 	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-natural-easing-curves */
 	--animate-easing-linear: cubic-bezier(0, 0, 1, 1);
 	--animate-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
 	--animate-easing-deceleration: cubic-bezier(0, 0, 0.2, 1);
 	--animate-easing-acceleration: cubic-bezier(0.4, 0, 1, 1);
-
-	/* https://material.io/guidelines/motion/duration-easing.html#duration-easing-common-durations */
-	--animate-duration-timeout: 3000ms;
-	--animate-duration-effect: 600ms;
-	--animate-duration-enter: 200ms;
-	--animate-duration-leave: 200ms;
-	--animate-duration-cancel: 300ms;
 }
 
 /* https://medium.com/p/88d6a5ba1862 */
-@custom-media --only-phone (width < 600px);
-@custom-media --only-tablet-portrait (width >= 600px) and (width < 900px);
-@custom-media --only-tablet-landscape (width >= 900px) and (width < 1200px);
-@custom-media --only-desktop (width >= 1200px) and (width < 1600px);
-@custom-media --tablet-portrait-up (width >= 600px);
-@custom-media --tablet-landscape-up (width >= 900px);
-@custom-media --desktop-up (width >= 1200px);
-@custom-media --big-desktop-up (width >= 1600px);
+/* @custom-media --only-phone (width < 600px); */
+@custom-media --tablet-portrait-up (width < 600px);
+@custom-media --tablet-landscape-up (width < 900px);
+@custom-media --desktop-up (width < 1200px);
+@custom-media --big-desktop-up (width < 1600px);
 
 @define-mixin ul-solid $color {
 	background-image: linear-gradient(90deg, $color, $color 100%);
