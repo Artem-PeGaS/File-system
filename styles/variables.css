@@ -4,7 +4,7 @@
 	--purple: #202d33;
 	--purple-light: #566473;
 
-	--green-light: color-mod(red alpha(50%));  /* Осветляет */
+	--green-light: color-mod(red alpha(50%)); /* Осветляет */
 	--link-ul-color: color-mod(red tint(50%)); /* Делает прозрачным */
 	--d-black: color-mod(black alpha(38%));
 	--link-ul-a-color: color-mod(var(--purple) alpha(50%));

@@ -25,7 +25,7 @@ $(() => {
 		$('body').addClass('msie');
 	}
 
-	const $container = $('.content:last-child');
+	const $container = $('body');
 
 	if ($container.find('.question').length > 0) {
 		$container.find('.question').each((i, el) => {
