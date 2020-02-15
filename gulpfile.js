@@ -54,9 +54,9 @@ gulp.task('prettier', (done) => {
 					});
 				})
 			)
-			.pipe(gulp.dest(file.dest));
+			.pipe(gulp.dest(file.dest))
+			.on('finish', () => done());
 	});
-	done();
 });
 
 gulp.task('postcss', (done) => {
@@ -224,4 +224,7 @@ gulp.task('server', () => {
 
 gulp.task('dev', gulp.series(gulp.parallel('watch', 'server')));
 
-gulp.task('build', gulp.parallel('eslint', 'webpack', 'prettier', 'csso', 'postcss', 'icons', 'nunjucks', 'images'));
+gulp.task(
+	'build',
+	gulp.series('prettier', gulp.parallel('eslint', 'webpack', 'csso', 'postcss', 'icons', 'nunjucks', 'images'))
+);
