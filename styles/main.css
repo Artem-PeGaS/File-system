@@ -3,7 +3,7 @@
 @import url('./fonts.css');
 
 /* Импорт стилей сторонних модулей */
-/* @import url('./../node_modules/swiper/dist/css/swiper.css');
+/* @import url('./../node_modules/swiper/css/swiper.css');
 @import url('./../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'); */
 
 /* Импорт стилей собственных компонентов */
@@ -32,26 +32,18 @@
 /* stylelint-enable */
 
 html {
-	@media (--desktop-up) {
-		font-size: 112.5%;
+	@media (width > 1600px) {
+		/* font-size: 112.5%; */
 	}
 }
 
 body {
-	color: var(--text-color);
-	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font-family: system-ui;
+	font-size: var(--fz-1);
+	color: var(--text-color);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-wrap: break-word;
-
-	.fout & {
-		font-family: 'Gotham Pro', sans-serif;
-	}
-
-	&.disable-hover {
-		pointer-events: none;
-	}
 }
 
 mark {
@@ -109,12 +101,18 @@ button {
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
-
-	.fout & {
-		font-family: 'Gotham Pro', sans-serif;
-	}
 }
 
-#barba-wrapper {
-	position: relative;
+ul,
+ol,
+li {
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	display: block;
 }

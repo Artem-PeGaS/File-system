@@ -1,0 +1,9 @@
+.link {
+	text-decoration: none;
+	transition-duration: var(--animate-duration-micro);
+	transition-timing-function: var(--animate-easing-standard);
+
+	&:hover,
+	&:focus {
+	}
+}
